@@ -67,7 +67,7 @@
                                     <p><?php if (session()->get('id_level') == 1) {
                                             echo 'Administrator';
                                         } elseif (session()->get('id_level') == 2) {
-                                            echo 'Owner';
+                                            echo 'Manager';
                                         } elseif (session()->get('id_level') == 3) {
                                             echo 'Kasir';
                                         } else {

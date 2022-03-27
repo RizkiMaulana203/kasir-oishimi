@@ -24,7 +24,7 @@
     <link href="<?= base_url(''); ?>/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="<?= base_url(''); ?>/css/style.css" rel="stylesheet">
     <!-- datatable print -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
     <!-- dropify -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css">
     <!-- sweetalert 2 -->
@@ -122,7 +122,7 @@
                                         <small><?php if (session()->get('id_level') == 1) {
                                                     echo 'Administrator';
                                                 } elseif (session()->get('id_level') == 2) {
-                                                    echo 'Owner';
+                                                    echo 'Manager';
                                                 } elseif (session()->get('id_level') == 3) {
                                                     echo 'Kasir';
                                                 } else {
@@ -190,47 +190,32 @@
                             <ul aria-expanded="false">
                                 <li><a href="<?= base_url('user/user'); ?>">Manage Users</a></li>
                                 <li><a href="<?= base_url('user/user_new'); ?>">Tambah</a></li>
+                                <li><a href="<?= base_url('user/user_log'); ?>">User Log</a></li>
                             </ul>
                         </li>
                         </li>
-
-                        <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                                <i class="fas fa-caret-down"></i>
-                                <span class="nav-text">Level</span>
-                            </a>
-                            <ul aria-expanded="false">
-                                <li><a href="<?= base_url('level/level'); ?>">Manage Level</a></li>
-                                <li><a href="<?= base_url('level/level_new'); ?>">Tambah</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-label">Food & Drinks</li>
+                        <li class="nav-label">Menu</li>
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                                 <i class="fas fa-utensils"></i>
-                                <span class="nav-text">Foods</span>
+                                <span class="nav-text">Menu</span>
                             </a>
                             <ul aria-expanded="false">
-                                <li><a href="<?= base_url('food/food'); ?>">Manage food</a></li>
-                                <li><a href="<?= base_url('food/food_new'); ?>">Tambah</a></li>
+                                <li><a href="<?= base_url('menu/menu'); ?>">Manage menu</a></li>
+                                <li><a href="<?= base_url('menu/menu_new'); ?>">Tambah</a></li>
 
                             </ul>
                         </li>
-                        <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                                <i class="fas fa-wine-glass"></i>
-                                <span class="nav-text">Drinks</span>
-                            </a>
-                            <ul aria-expanded="false">
-                                <li><a href="<?= base_url('drink/drink'); ?>">Manage Drinks</a></li>
-                                <li><a href="<?= base_url('drink/drink_new'); ?>">Tambah</a></li>
-                            </ul>
-                        </li>
+                        <li class="nav-label">Order</li>
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                                 <i class="fas fa-wallet"></i>
-                                <span class="nav-text">Transaksi</span>
+                                <span class="nav-text">Order</span>
                             </a>
                             <ul aria-expanded="false">
-                                <li><a href="<?= base_url('transaksi/transaksi'); ?>">Manage Transaksi</a></li>
-                                <li><a href="<?= base_url('transaksi/transaksi_new'); ?>">Tambah</a></li>
-                                <li><a href="<?= base_url('transaksi/print'); ?>">Laporan</a></li>
+                                <li><a href="<?= base_url('order/detail_order_new'); ?>">Order</a></li>
+                                <li><a href="<?= base_url('order/order/detail_order'); ?>">Detail Order</a></li>
+                                <li><a href="<?= base_url('order/transaksi'); ?>">Transaksi</a></li>
+                                <li><a href="<?= base_url('order/print'); ?>">Laporan</a></li>
+
                             </ul>
                         </li>
                     </ul>
@@ -238,15 +223,15 @@
 
                 <?php if (session()->get('id_level') == 2) { ?>
                     <ul class="metismenu" id="menu">
-                        <li class="nav-label first">Main Menu</li>
+                        <li class="nav-label">Order</li>
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                                 <i class="fas fa-wallet"></i>
-                                <span class="nav-text">Transaksi</span>
+                                <span class="nav-text">Order</span>
                             </a>
                             <ul aria-expanded="false">
-                                <li><a href="<?= base_url('transaksi/transaksi'); ?>">Manage Transaksi</a></li>
-                                <li><a href="<?= base_url('transaksi/transaksi_new'); ?>">Tambah</a></li>
-                                <li><a href="<?= base_url('transaksi/print'); ?>">Laporan</a></li>
+                                <li><a href="<?= base_url('order/print'); ?>">Laporan</a></li>
+
+
                             </ul>
                         </li>
                     </ul>
@@ -254,15 +239,15 @@
 
                 <?php if (session()->get('id_level') == 3) { ?>
                     <ul class="metismenu" id="menu">
-                        <li class="nav-label first">Main Menu</li>
+                        <li class="nav-label">Order</li>
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                                 <i class="fas fa-wallet"></i>
-                                <span class="nav-text">Transaksi</span>
+                                <span class="nav-text">Order</span>
                             </a>
                             <ul aria-expanded="false">
-                                <li><a href="<?= base_url('transaksi/transaksi'); ?>">Manage Transaksi</a></li>
-                                <li><a href="<?= base_url('transaksi/transaksi_new'); ?>">Tambah</a></li>
-                                <li><a href="<?= base_url('transaksi/print'); ?>">Laporan</a></li>
+                                <li><a href="<?= base_url('order/detail_order_new'); ?>">Order</a></li>
+                                <li><a href="<?= base_url('order/order/detail_order'); ?>">Detail Order</a></li>
+                                <li><a href="<?= base_url('order/transaksi'); ?>">Transaksi</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -345,15 +330,14 @@
         });
     </script>
 
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/plug-ins/1.11.5/pagination/select.js"></script>
-
 
     <!-- print datatable -->
     <script>
@@ -367,7 +351,7 @@
                         orientation: 'potrait',
                         pageSize: 'Legal',
                         title: 'Data Transaksi',
-                        download: 'open'
+                        // download: 'open'
                     },
                     'excel', 'print', 'csv', 'copy'
                 ]
@@ -375,6 +359,21 @@
         });
     </script>
 
+
+    <!-- date -->
+
+    <!-- date -->
+
+
+    <!-- notif alert -->
+    <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function() {
+                $(this).remove();
+            });
+        }, 3000);
+    </script>
+    <!-- akhir notif alert -->
 
     <!-- dropify -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
@@ -442,15 +441,16 @@
     </script>
     <!-- Akhir Sweetalert User -->
 
-    <!-- Sweetalert Level -->
+
+    <!-- Sweetalert menu -->
 
     <script>
-        const flashdata_level = $('.flashdata-level').data('flashdata');
+        const flashdata_menu = $('.flashdata-menu').data('flashdata');
 
-        if (flashdata_level) {
+        if (flashdata_menu) {
             Swal.fire({
-                title: 'Data Level',
-                text: flashdata_level,
+                title: 'Data Menu',
+                text: flashdata_menu,
                 confirmButtonColor: '#3085d6',
                 icon: 'success'
             })
@@ -469,7 +469,7 @@
 
                 Swal.fire({
                     title: 'Apakah Kamu Yakin?',
-                    text: "Data Level Akan Dihapus!",
+                    text: "Data Menu Akan Dihapus!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -486,99 +486,7 @@
 
         }
     </script>
-    <!-- Akhir Sweetalert Level -->
-
-    <!-- Sweetalert food -->
-
-    <script>
-        const flashdata_food = $('.flashdata-food').data('flashdata');
-
-        if (flashdata_food) {
-            Swal.fire({
-                title: 'Data Food',
-                text: flashdata_food,
-                confirmButtonColor: '#3085d6',
-                icon: 'success'
-            })
-
-            //tombol hapus
-            const allowsubmit = false;
-            $('.tombol-hapus').on('click', function(e) {
-                e.preventDefault();
-                var href = $(this).attr("href");
-                console.log(href);
-                warningsebelumredirect(href);
-
-            });
-
-            function warningsebelumredirect(href) {
-
-                Swal.fire({
-                    title: 'Apakah Kamu Yakin?',
-                    text: "Data Food Akan Dihapus!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Hapus Data!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        document.location.href = href;
-
-                    }
-                })
-            }
-
-
-        }
-    </script>
-    <!-- Akhir Sweetalert food -->
-
-    <!-- Sweetalert drink -->
-
-    <script>
-        const flashdata_drink = $('.flashdata-drink').data('flashdata');
-
-        if (flashdata_drink) {
-            Swal.fire({
-                title: 'Data Drink',
-                text: flashdata_drink,
-                confirmButtonColor: '#3085d6',
-                icon: 'success'
-            })
-
-            //tombol hapus
-            const allowsubmit = false;
-            $('.tombol-hapus').on('click', function(e) {
-                e.preventDefault();
-                var href = $(this).attr("href");
-                console.log(href);
-                warningsebelumredirect(href);
-
-            });
-
-            function warningsebelumredirect(href) {
-
-                Swal.fire({
-                    title: 'Apakah Kamu Yakin?',
-                    text: "Data Drink Akan Dihapus!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Hapus Data!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        document.location.href = href;
-
-                    }
-                })
-            }
-
-
-        }
-    </script>
-    <!-- Akhir Sweetalert drink -->
+    <!-- Akhir Sweetalert menu -->
 
     <!-- Sweetalert transaksi -->
 

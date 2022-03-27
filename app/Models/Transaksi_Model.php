@@ -13,14 +13,13 @@ class Transaksi_Model extends Model
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
-    protected $allowedFields = ['id_user', 'tanggal', 'total_bayar', 'no_meja', 'keterangan', 'status_order', 'id_masakan', 'id_minuman'];
+    protected $allowedFields = ['id_user', 'id_order', 'tanggal', 'total_bayar', 'uang', 'kembali'];
 
     public function get_transaksi()
     {
         return $this->db->table('transaksi')
             ->join('user', 'user.id_user = transaksi.id_user')
-            ->join('masakan', 'masakan.id_masakan = transaksi.id_masakan')
-            ->join('minuman', 'minuman.id_minuman = transaksi.id_minuman')
+            ->join('order', 'order.id_order = transaksi.id_order')
             ->get()->getResultArray();
     }
 

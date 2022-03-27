@@ -29,7 +29,7 @@ class User extends BaseController
 
     public function user()
     {
-        $user = $this->User_Model->findALL();
+        $user = $this->User_Model->get_user();
 
 
         $data = [
@@ -84,6 +84,21 @@ class User extends BaseController
 
         ];
         return view('templates/user/profile', $data);
+    }
+
+    public function user_log()
+    {
+        $user = $this->User_Model->findALL();
+
+
+        $data = [
+            'title' => 'Halaman Log Users',
+            'user' => $user,
+            'user' => $this->User_Model->get_userLog()
+
+
+        ];
+        return view('templates/user_log', $data);
     }
 
 

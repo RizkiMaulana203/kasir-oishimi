@@ -25,7 +25,7 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'adminfilter' => \App\Filters\AdminFilter::class,
         'kasirfilter' => \App\Filters\KasirFilter::class,
-        'ownerfilter' => \App\Filters\OwnerFilter::class
+        'managerfilter' => \App\Filters\ManagerFilter::class
     ];
 
     /**
@@ -47,7 +47,7 @@ class Filters extends BaseConfig
                 'auth', 'auth/*',
                 '/'
             ]],
-            'ownerfilter' => ['except' => [
+            'managerfilter' => ['except' => [
                 'auth', 'auth/*',
                 '/'
             ]],
@@ -60,8 +60,9 @@ class Filters extends BaseConfig
                 'home', 'home/*',
                 'user', 'user/*',
                 'level', 'level/*',
-                'food', 'food/*',
-                'drink', 'drink/*',
+                'menu', 'menu/*',
+                'order', 'order/*',
+                'menu', 'menu/*',
                 'transaksi', 'transaksi/*',
             ]],
             'kasirfilter' => ['except' => [
@@ -70,13 +71,31 @@ class Filters extends BaseConfig
                 'user', 'user/profile',
                 'user', 'user/user_edit',
                 'user', 'user/user_update',
+                'order', 'order/*',
+                // 'order', 'order/detail_order_new',
+                // 'order', 'order/detail_order_baru',
+                // 'order', 'order/detail_order_edit',
+                // 'order', 'order/order/detail_order',
+                // 'order', 'order/order_new',
+                // 'order', 'order/order_bayar_new',
+                // 'order', 'order/order/order_tambah',
+                // 'order', 'order/order/pesan_detail_order',
+                // 'order', 'order/order/detail_order_update',
+                // 'order', 'order/order/order_bayar',
+                // 'order', 'order/detail_order_hapus',
+                // 'order', 'order/order_hapus',
+                // 'order', 'order/detaildelet',
+                // 'order', 'order/transaksi_hapus',
+                // 'order', 'order/transaksi',
+                // 'order', 'order/order',
             ]],
-            'ownerfilter' => ['except' => [
+            'managerfilter' => ['except' => [
                 'home', 'home/*',
                 'transaksi', 'transaksi/*',
                 'user', 'user/profile',
                 'user', 'user/user_edit',
                 'user', 'user/user_update',
+                'order', 'order/print',
             ]],
         ],
     ];

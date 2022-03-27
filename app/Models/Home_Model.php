@@ -10,13 +10,9 @@ class Home_Model extends Model
     {
         return $this->db->table('user')->countAll();
     }
-    public function total_masakan()
+    public function total_menu()
     {
-        return $this->db->table('masakan')->countAll();
-    }
-    public function total_minuman()
-    {
-        return $this->db->table('minuman')->countAll();
+        return $this->db->table('menu')->countAll();
     }
     public function total_transaksi()
     {

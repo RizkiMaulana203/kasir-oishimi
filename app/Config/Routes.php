@@ -36,16 +36,16 @@ $routes->get('/', 'Home::index');
 $routes->get('/', 'User::index');
 $routes->get('/', 'Level::index');
 $routes->get('/', 'Food::index');
+$routes->get('/', 'Order::index');
 $routes->get('user/user_edit', ' User::user_edit/$1');
 $routes->get('user/user_update', ' User::user_update/$1');
 $routes->get('level/level_edit', 'level::level_edit/$1');
 $routes->get('level/level_update', ' Level::level_update/$1');
-$routes->get('food/food_edit', ' food::food_edit/$1');
-$routes->get('food/food_update', ' food::food_update/$1');
-$routes->get('drink/drink_edit', ' drink::drink_edit/$1');
-$routes->get('drink/drink_update', ' drink::drink_update/$1');
 $routes->get('transaksi/transaksi_edit', ' transaksi::transaksi_edit/$1');
 $routes->get('transaksi/transaksi_update', ' transaksi::transaksi_update/$1');
+$routes->get('detail_/detail__edit', ' detail_::detail__edit/$1');
+$routes->get('detail_/detail__update', ' detail_::detail__update/$1');
+$routes->get('order/order_bayar_new/(:num)', 'Order::order_bayar_new/$1');
 
 /*
  * --------------------------------------------------------------------

@@ -20,6 +20,14 @@ class User_Model extends Model
         return $this->db->table('user')
             ->join('level', 'level.id_level = user.id_level')
             ->get()->getResultArray();
+    }
+
+    public function get_userLog()
+    {
+        return $this->db->table('user')
+            ->join('level', 'level.id_level = user.id_level')
+            ->join('log', 'log.id_user = user.id_user')
+            ->get()->getResultArray();
 
         // $builder = $this->db->table('masyarakat');
         // $builder->select('*');

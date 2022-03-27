@@ -91,7 +91,7 @@
                                         <?= $validation->getError('foto'); ?>
                                     </div>
                                     <div class="form-group">
-                                        <input type="hidden" name="id_level" id="id_level" class="input" value="3">
+                                        <input type="hidden" name="id_level" id="id_level" class="input" value="2">
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-secondary" onclick="location.href='<?= base_url('user/user'); ?>'">Batal</button>

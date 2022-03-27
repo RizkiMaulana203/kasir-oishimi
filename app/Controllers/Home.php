@@ -16,8 +16,7 @@ class Home extends BaseController
         $data = [
             'title' => 'Home',
             'total_user' => $this->Home_Model->total_user(),
-            'total_masakan' => $this->Home_Model->total_masakan(),
-            'total_minuman' => $this->Home_Model->total_minuman(),
+            'total_menu' => $this->Home_Model->total_menu(),
             'total_transaksi' => $this->Home_Model->total_transaksi(),
 
         ];

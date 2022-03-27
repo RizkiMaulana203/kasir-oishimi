@@ -31,10 +31,10 @@
                     <option>Surabaya, IDN</option>
                 </select> -->
             </div>
-            <a href="javascript:void(0);" class="btn btn-secondary mb-2"><i class="las la-calendar scale5 mr-3"></i>Filter Periode</a>
+            <!-- <a href="javascript:void(0);" class="btn btn-secondary mb-2"><i class="las la-calendar scale5 mr-3"></i>Filter Periode</a> -->
         </div>
         <div class="row">
-            <div class="col-xl-3 col-sm-6 m-t35">
+            <div class="col-xl-4 col-sm-6 m-t35">
                 <div class="card card-coin">
                     <div class="card-body text-center">
                         <img class="mb-3 currency-icon" width="80" height="80" src="<?= base_url(''); ?>/icons/orang.png">
@@ -44,44 +44,44 @@
                         <h2 class="text-black mb-2 font-w600"><?= $total_user; ?></h2>
                         <p class="mb-0 fs-14">
 
-                            <span class="text-success mr-1">‎</span>user
+                            <a href="<?= base_url('user/user'); ?>"> <span class="text-success mr-1">‎</span>user</a>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-sm-6 m-t35">
+            <div class="col-xl-4 col-sm-6 m-t35">
                 <div class="card card-coin">
                     <div class="card-body text-center">
                         <img class="mb-3 currency-icon" width="80" height="80" src="<?= base_url(''); ?>/icons/masakan.png">
 
-                        <h2 class="text-black mb-2 font-w600"><?= $total_masakan; ?></h2>
+                        <h2 class="text-black mb-2 font-w600"><?= $total_menu; ?></h2>
                         <p class="mb-0 fs-13">
 
-                            <span class="text-success mr-1">‎</span>foods
+                            <a href="<?= base_url('menu/menu'); ?>"><span class="text-success mr-1">‎</span>menu</a>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-sm-6 m-t35">
+            <!-- <div class="col-xl-3 col-sm-6 m-t35">
                 <div class="card card-coin">
                     <div class="card-body text-center">
                         <img class="mb-3 currency-icon" width="80" height="80" src="<?= base_url(''); ?>/icons/minuman.png">
 
-                        <h2 class="text-black mb-2 font-w600"><?= $total_minuman; ?></h2>
+                        <h2 class="text-black mb-2 font-w600"></h2>
                         <p class="mb-0 fs-14">
                             <span class="text-danger mr-1">‎</span>drinks
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 m-t35">
+            </div> -->
+            <div class="col-xl-4 col-sm-6 m-t35">
                 <div class="card card-coin">
                     <div class="card-body text-center">
                         <img class="mb-3 currency-icon" width="80" height="80" src="<?= base_url(''); ?>/icons/wallet.png">
 
                         <h2 class="text-black mb-2 font-w600"><?= $total_transaksi; ?></h2>
                         <p class="mb-0 fs-14">
-                            <span class="text-success mr-1">‎</span>transaksi
+                            <a href="<?= base_url('order/transaksi'); ?>"><span class="text-success mr-1">‎</span>transaksi</a>
                         </p>
                     </div>
                 </div>

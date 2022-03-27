@@ -66,88 +66,37 @@
                             <div class="flashdata-transaksi" data-flashdata="<?= session()->getFlashdata('pesan'); ?>"></div>
                             <table id="example" class="display" style="min-width: 845px">
                                 <thead>
-                                    <tr>
+                                    <tr class="text-center">
                                         <th>No</th>
-                                        <th>Nama</th>
+                                        <th>Id Order</th>
+                                        <th>Nama Kasir</th>
                                         <th>Tanggal</th>
                                         <th>Total Bayar</th>
-                                        <th>No Meja</th>
-                                        <th>Keterangan</th>
-                                        <th>Status</th>
-                                        <th>Foods</th>
-                                        <th>Drinks</th>
+                                        <th>Uang</th>
+                                        <th>Kembali</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    <tr>
+                                    <tr class="text-center">
                                         <?php $i = 1; ?>
                                         <?php foreach ($transaksi as $t) : ?>
-                                            <td scope="row"><?= $i++; ?></td>
-                                            <td><?= $t['nama_user']; ?></td>
-                                            <td><?= $t['tanggal']; ?></td>
-                                            <td>Rp.<?= $t['total_bayar']; ?></td>
-                                            <td><?= $t['no_meja']; ?></td>
-                                            <td><?= $t['keterangan']; ?></td>
-                                            <?php if ($t['status_order'] == "selesai") : ?>
-                                                <td>
-                                                    <span class="badge badge-success">
-                                                        <?= $t['status_order']; ?>
-                                                    </span>
-                                                </td>
-                                            <?php else : ?>
-                                                <td>
-                                                    <span class="badge badge-info">
-                                                        <?= $t['status_order']; ?>
-                                                    </span>
-                                                <?php endif ?>
-                                                <td><?= $t['nama_masakan']; ?></td>
-                                                <td><?= $t['nama_minuman']; ?></td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <a href="/transaksi/transaksi_edit/<?= $t['id_transaksi']; ?>" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                        <a href="/transaksi/transaksi_hapus/<?= $t['id_transaksi']; ?>" class="btn btn-danger shadow btn-xs sharp tombol-hapus" id="tombol-hapus" name="tombol-hapus"><i class="fa fa-trash"></i></a>
-                                                    </div>
-                                                </td>
+                                            <td scope="row" class="text-center"><?= $i++; ?></td>
+                                            <td class="text-center"><?= $t['id_order']; ?></td>
+                                            <td class="text-center"><?= $t['nama_user']; ?></td>
+                                            <td class="text-center"><?= $t['tanggal']; ?></td>
+                                            <td class="text-center"> Rp. <?= number_format($t['total_bayar']); ?></td>
+                                            <td class="text-center"> Rp.<?= number_format($t['uang']); ?></td>
+                                            <td class="text-center"> Rp.<?= number_format($t['kembali']); ?></td>
+                                            <td class="text-center">
+                                                <div class="text-center">
+                                                    <a href="/order/transaksi_hapus/<?= $t['id_transaksi']; ?>" class="btn btn-danger shadow btn-xs sharp tombol-hapus" id="tombol-hapus" name="tombol-hapus"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
                                     </tr>
                                 <?php endforeach; ?>
                                 </tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td style=" font-size: 20px;"><b>Jumlah :</b></td>
-                                    <td style=" font-size: 20px; "><span>Rp.<?= $sum; ?></span></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
                             </table>
                         </div>
                     </div>

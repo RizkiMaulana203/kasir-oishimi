@@ -132,6 +132,7 @@ class Auth extends BaseController
             if (password_verify($password, $cek->password)) {
                 $data = array(
                     'log' => TRUE,
+                    'id_user' => $cek->id_user,
                     'nama_user' => $cek->nama_user,
                     'username' => $cek->username,
                     'id_level' => $cek->id_level,
